@@ -1,0 +1,33 @@
+.rl-box-item {
+  position: relative;
+
+  &::after {
+    content: 'EDIT MODE';
+    cursor: move;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 5px;
+    width: 100%;
+    min-height: 100%;
+    background-color: #444;
+    opacity: 0.8;
+    z-index: 1000;
+
+    transition: opacity 0.3s;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: center;
+    font-size: 0.7rem;
+  }
+}
+
+.rl-box-item-target {
+  &::after {
+    opacity: 0.3;
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "react-lego",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Simple components to help sort your form entries",
+  "author": {
+    "name": "Jeconias Santos",
+    "url": "https://github.com/jeconias"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeconias/react-lego.git"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "start": "nodemon -w lib -e ts,tsx,scss -x yarn build",
+    "app:install": "yarn --cwd ./app install",
+    "app:start": "yarn --cwd ./app start",
+    "app:link": "yarn --cwd ./app link 'react-lego'"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^14.1.0",
+    "@rollup/plugin-typescript": "^8.5.0",
+    "@types/react": "^18.0.19",
+    "nodemon": "^2.0.19",
+    "rollup": "^2.79.0",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-scss": "3",
+    "sass": "^1.54.9",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "classnames": "^2.3.2",
+    "react-children-utilities": "^2.8.0"
+  }
+}

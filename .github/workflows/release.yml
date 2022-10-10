@@ -71,11 +71,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16
-
-      - name: Login to npm
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-          npm config set registry https://registry.npmjs.org/
+          registry-url: 'https://registry.npmjs.org'
 
       - name: NPM Generate package.json version
         run: |
@@ -99,4 +95,19 @@ jobs:
       - name: Release packages
         run: npm publish
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  release_delete:
+    name: Remove release if failed
+    needs: [release, package]
+    if: failure()
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Delete tag and release
+        uses: jeconias/delete-tag-and-release@v0.2.0
+        with:
+          delete_release: true
+          tag_name: ${{ needs.release.outputs.new_tag }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

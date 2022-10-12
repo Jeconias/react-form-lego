@@ -54,7 +54,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: React Lego Release ${{ env.NEW_TAG }}
+          name: React Form Lego - Release ${{ env.NEW_TAG }}
           tag_name: ${{ env.NEW_TAG }}
           body_path: ./release_body
 

@@ -1,6 +1,6 @@
 import './app.css';
-import 'react-lego/dist/styles/bundle.css';
-import { Box, BoxItem, BoxOrder } from 'react-lego';
+import 'react-form-lego/dist/styles/bundle.css';
+import { Box, BoxItem, BoxOrder } from 'react-form-lego';
 import { useState } from 'react';
 
 function App() {

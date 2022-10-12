@@ -1,5 +1,5 @@
 {
-  "name": "react-lego",
+  "name": "react-form-lego",
   "version": "1.0.0",
   "license": "MIT",
   "description": "Simple components to help sort your form entries",
@@ -9,14 +9,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jeconias/react-lego.git"
+    "url": "https://github.com/jeconias/react-form-lego.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jeconias/react-form-lego/issues"
   },
   "scripts": {
     "build": "rollup -c",
     "start": "nodemon -w lib -e ts,tsx,scss -x yarn build",
     "app:install": "yarn --cwd ./app install",
     "app:start": "yarn --cwd ./app start",
-    "app:link": "yarn --cwd ./app link 'react-lego'"
+    "app:link": "yarn --cwd ./app link 'react-form-lego'"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^22.0.2",

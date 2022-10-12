@@ -1,4 +1,4 @@
-## React Lego
+## React Form Lego
 
 Simple components to help sort your form entries
 

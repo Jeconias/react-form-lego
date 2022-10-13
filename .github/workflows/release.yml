@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Get new Tag Version
         run: |
@@ -65,12 +65,12 @@ jobs:
 
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install NodeJS
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
 
       - name: NPM Generate package.json version
@@ -78,7 +78,7 @@ jobs:
           npm config set git-tag-version false
           npm version ${{ needs.release.outputs.new_tag }}
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         id: cache-lib
         with:
           path: |

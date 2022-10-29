@@ -14,6 +14,13 @@
   "bugs": {
     "url": "https://github.com/Jeconias/react-form-lego/issues"
   },
+  "keywords": [
+    "react",
+    "form",
+    "lego",
+    "typescript",
+    "javascript"
+  ],
   "scripts": {
     "build": "rollup -c",
     "start": "nodemon -w lib -e ts,tsx,scss -x yarn build",

@@ -39,7 +39,7 @@ jobs:
           esac
 
       - id: step_tag_id
-        run: echo "::set-output name=new_tag::${{ env.NEW_TAG }}"
+        run: echo "new_tag=${{ env.NEW_TAG }}" >> $GITHUB_OUTPUT
 
       - name: Select last Tag
         run: |
@@ -61,6 +61,9 @@ jobs:
   package:
     name: 'Package to NPM'
     runs-on: ubuntu-latest
+    environment: PROD
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     needs: release
 
     steps:
@@ -78,7 +81,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: 'https://registry.npmjs.org/'
 
       - name: NPM Generate package.json version
         run: |
@@ -94,8 +97,6 @@ jobs:
 
       - name: Release packages
         run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   release_delete:
     name: Remove release if failed

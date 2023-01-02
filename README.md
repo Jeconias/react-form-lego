@@ -1,6 +1,12 @@
+[![https://nodei.co/npm/react-form-lego.png?downloads=true&stars=true&mini=true](https://nodei.co/npm/react-form-lego.png?downloads=true&stars=true&mini=true)](https://www.npmjs.com/package/react-form-lego)
+
 ## React Form Lego
 
 Simple components to help sort your form entries
+
+### How to install
+
+`yarn add react-form-lego` or `npm install react-form-lego`
 
 ### How to use
 
